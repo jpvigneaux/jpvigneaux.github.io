@@ -83,6 +83,11 @@
                   {% endfor %}
                 </div>
               </li>
+              {%- elsif p.title == "cv" -%}
+              <li class="nav-item">
+                <a class="nav-link" href="assets/pdf/CV.pdf">CV
+                </a>
+              </li>
               {%- else %}
               <li class="nav-item {% if page.title == p.title %}active{% endif %}">
                 <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
