@@ -9,8 +9,16 @@ layout: default
             <p class="post-description">{{ page.description }}</p>
           </header>
 
-          <article>
-            {{ content }}
+          <article class="post-content">
+            {% if page.toc and page.toc.beginning %}
+            <div id="table-of-contents">
+              {{ content | toc_only }}
+            </div>
+            <hr>
+            {% endif %}
+            <div id="markdown-content">
+              {{ content | inject_anchors }}
+            </div>
           </article>
 
           {%- if page.related_publications != null and page.related_publications.size > 0 -%}

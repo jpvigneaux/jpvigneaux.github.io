@@ -71,11 +71,11 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: # your GitHub user name
+github_username: jpvigneaux  # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: # your Twitter handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-linkedin_username: # your LinkedIn user name
+linkedin_username: juan-pablo-vigneaux-36570834 # your LinkedIn user name
 telegram_username: # your Telegram user name
 scholar_userid: JbWs0hYAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
@@ -123,9 +123,9 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_nav_title: "" # your blog must have a title for it to be displayed in the nav bar
-blog_description: a simple whitespace theme for academics
+blog_name:  # blog_name will be displayed in your blog page
+blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
+blog_description: 
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -140,11 +140,11 @@ related_blog_posts:
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out
 # the information below.
 giscus:
-  repo: alshedivat/al-folio      # <your-github-user-name>/<your-github-repo-name>
-  repo_id: MDEwOlJlcG9zaXRvcnk2MDAyNDM2NQ==
-  category: Comments             # name of the category under which discussions will be created
-  category_id: DIC_kwDOA5PmLc4CTBt6
-  mapping: title                 # identify discussions by post title
+  repo: "jpvigneaux/jpvigneaux.github.io"      # <your-github-user-name>/<your-github-repo-name>
+  repo_id: "R_kgDOKDQOxg"
+  category: Announcements             # name of the category under which discussions will be created
+  category_id: DIC_kwDOKDQOxs4CfNQh
+  mapping: pathname                 # identify discussions by post title
   strict: 1                      # use strict identification mode
   reactions_enabled: 1           # enable (1) or disable (0) emoji reactions
   input_position: bottom         # whether to display input form below (bottom) or above (top) the comments
@@ -176,6 +176,10 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  courses:
+    output: true
+    permalink: /projects/:path/
+
 
 announcements:
   enabled: true
@@ -426,3 +430,5 @@ jsonresume:
   - languages
   - interests
   - references
+
+
