@@ -178,11 +178,16 @@ collections:
     permalink: /projects/:path/
   courses:
     output: true
-    permalink: /projects/:path/
-
+    permalink: /courses/:path/
+  Ma140a:
+    output: true
+    permalink: /Ma140a/:path/
+  Ma4:
+    output: true
+    permalink: /Ma4/:path/
 
 announcements:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -285,8 +290,9 @@ scholar:
   locale: en
 
   source: /_bibliography/
-  bibliography: papers.bib
-  bibliography_template: bib
+  bibliography: references.bib
+  mybibliography: mypapers.bib
+  # bibliography_template: 
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
   # See https://github.com/alshedivat/al-folio/issues/357.
@@ -295,13 +301,13 @@ scholar:
   replace_strings: true
   join_strings: true
 
-  details_dir: bibliography
-  details_layout: bibtex.html
-  details_link: Details
+ # details_dir: bibliography
+ # details_layout: bibtex.html
+ # details_link: Details
 
-  query: "@*"
-  group_by: year
-  group_order: descending
+  # query: "@*"
+  # group_by: year
+  # group_order: descending
 
 badges: # Display different badges for your publications
   altmetric_badge: false # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)

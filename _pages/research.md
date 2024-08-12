@@ -1,57 +1,97 @@
 ---
 layout: page
-title: Research
+title: research
 permalink: /research/
 description: Interests and projects
-nav: false
+nav: true
 nav_order: 1
 #display_categories: [work, fun]
 horizontal: false
 ---
 
-I'm broadly interested in the concept of **information**, a multifaceted concept at the crossroads of physics, computer science, pure mathematics and biology.  
+I'm broadly interested in mathematical aspects of **information theory**, particularly in connection with category theory and  geometry (metric geometry, geometric measure theory, ...). 
 
-The projects described below reflect my main scientific contributions so far.
+My published work can be divided in three different areas:
+* [Topological characterization of information measures](#minfo-topology) 
+* [Information dimension and measures with geometric structure](#dimension)
+* [Magnitude and diversity](#magnitude)
 
-## Information topology
+I've included links to videos and slides of relevant presentations that I have given in each area, along other resources. 
 
-Baudot and Bennequin {% cite Baudot2015 %} identified Shannon's discrete entropy as a topological invariant of certain categories statistical observables. My Ph.D. thesis and a series of articles {% cite %} gave a general construction in the framew extended their results in several directions.
+I'm currently involved in two research projects in AI:
+* Identification of syntactic features within LLMs (with Matilde Marcolli and Aman Burman), using layer-wise relevance propagation and some tools from mechanistic interpretability (probes, activation patching,...). 
+* Explanation of complex classifiers based on LLMs using an enhanced version of layer-wise relevance propagation (with Markus Marks). 
 
-More precisely, I defined *information structures* as categories that encode the relations of refinement between
-different statistical observables. So every information structure gives rise to a ringed site, and one may define information cohomology using the homological tools developed by Artin, Grothendieck, Verdier and their collaborators in the SGA IV ("Cohomologie des topos"). The cohomology depends on a presheaf (contravariant functor) of coefficients. The cocycles enjoy certain recursive properties e.g. the chain rule of entropy.
+## Topological characterization of information measures {#minfo-topology}
 
-When the information structure encodes discrete random variables, the classical information functions—
-Shannon entropy, Tsallis α-entropy, Kullback-Leibler divergence—appear as 1-cocycles
-for appropriate modules of probabilistic coefficients (functions of probability laws).
-When the coefficients are combinatorial (functions of histograms), the only 0-cocycle is the exponential function, and the 1-cocycles are generalized multinomial coefficients (FontenéWard). There is an asymptotic relation between the combinatorial and probabilistic
-cocycles. 
+In "simple" terms, *information topology* regards a statistical system as a generalized topological space (a *topos*) and identifies Shannon entropy, along other important "measures of information" used in information theory, as an [invariant](https://en.wikipedia.org/wiki/Invariant_(mathematics)) associated to this space. 
 
-I The cohomological computations are restricted to the real valued, gaussian case. When coordinates are fixed,
-the 1-cocycles are the differential entropy as well as generalized moments. When
-computations are done in a coordinate-free manner, with the so-called grassmannian
-categories, we recover as the only degree-one cohomology classes the entropy and the
-dimension. This constitutes a novel algebraic characterization of differential entropy.
+[Toposes or topoi](https://en.wikipedia.org/wiki/Topos) are an abstraction of topological spaces in the language of category theory and sheaves introduced by Grothendieck and his collaborators (Artin, Verdier,...). Toposes allow richer cohomology theories than set-theoretic topological spaces, and some of these theories (e.g. étale cohomology) play a key role in modern algebraic geometry. Moreover, these *Grothendieck toposes* are particular cases of *elementary toposes*, which are "nice" categories with properties analogous to those of the category of sets that play an important role in logic. 
 
-## Rectifiable and stratified measures
+Baudot and Bennequin {% cite Baudot2015 %} first identified Shannon's discrete entropy as a toposic invariant of certain categories of discrete observables. My Ph.D. thesis {% cite Vigneaux2019-thesis %} and a series of articles extended their results in several directions. Namely, the general homological constructions were abstracted from the concrete setting of discrete variables via  *information structures* (categories that encode the relations of refinement between observables), allowing seamless extensions and generalizations to other settings such as continuous vector-valued observables {%cite Vigneaux2020information %}. 
+
+When the information structure encodes discrete observables, the classical information functions—--
+Shannon entropy, Tsallis $\alpha$-entropy, Kullback-Leibler divergence—--appear as 1-cocycles; the corresponding "coefficients" of the cohomology are probabilistic functionals (i.e. functions of probability laws).
+There is also a combinatorial version of the theory (coefficients are  functions of histograms) where the only 0-cocycle is the exponential function and the 1-cocycles are generalized multinomial coefficients (Fontené-Ward) {% cite  Vigneaux2023characterization %}. There is an asymptotic relation between the combinatorial and probabilistic cocycles. 
+
+For information structures that contain continuous vector-valued observables (besides discrete ones), the only new degree-one cocycles are Shannon's differential entropy entropy and the dimension (of the support of the measure) {% cite Vigneaux-GSI21-cohomology %}. This constitutes a novel algebraic characterization of differential entropy.
+
+Information cohomology has seen some advances in the last years. Marcolli and Manin {% cite Manin2020homotopy %} related information structures with other homotopy- and category-theoretic models of neural information networks. Similar perspectives have been developed more recently by Belfiore and Bennequin {% cite belfiore2021topos %} to tackle the problem of interpretability of neural networks. They associate to each neural network a certain category equipped with a Grothendieck topology (determined by the connectivity of the neurons), and study the category of sheaves on it, which is a topos. Every topos has an internal logic, and they are linking this internal toposic logic with the classification capabilities that emerge in each layer of a trained neural network (these were previously studied in the experimental article \cite{belfiore2021logical}). 
+
+**Presentations:** 
+* ["Cohomological Aspects of Information" [video]](https://www.youtube.com/watch?v=Nzx9MotxEas), Topos Institute, 2024: I summarize  the main results that I have obtained in this domain. 
+* ["Information Cohomology of Classical Vector-valued Observables" [video]](https://www.youtube.com/watch?v=rW76AlxMbrU), GSI2021: I provide details on the characterization of the differential entropy and the dimension as the only cohomology classes in degree 1 for systems of vector-valued observables.
+* ["Entropy under disintegrations" [video]](https://www.youtube.com/watch?v=uYoW-pGbEWY), GSI 2021: I explain how every disintegration of a reference measure $\lambda$ induces a chain rule for the generalized differential entropy $S(\rho) = -\int \log (\frac{d\rho}{d\lambda}) d\rho$, which gives a foundation to the extension of information cohomology to more general observables e.g. with values in locally compact topological groups. 
+* ["Variations on Information Theory: Categories, Cohomology, Entropy" [video]](https://www.youtube.com/watch?v=eZqo_JcTk3I), IHES, 2016: an older presentation, aimed at probabilistists, where I introduce the notion of (de Rham) cohomology  and it's analogue in our theory.
+
+**Other references:**
+* ["On the Structure of Information Cohomology"](https://tspace.library.utoronto.ca/bitstream/1807/130552/3/Dub%EF%BF%BD_Hubert_202311_PhD_thesis.pdf), Ph.D. thesis by Hubert Dubé (U. Toronto), which introduces the Mayer-Vietoris long exact sequence, Shapiro's lemma and Hochschild-Serre spectral sequence in the framework of information cohomology, and provides some bounds on the cohomological dimension along with new cohomological computations. 
+* ["Information cohomology and Entropy"](https://sites.unimi.it/barbieri/castiglioni.pdf), master thesis by Luca Castiglioni (University of Milan).
+
+## Information dimension and measures with geometric structure {#dimension}
+
+From an analytic perspective, the *dimension* has played an important in information theory since its inception, mainly in connection with quantization.  By partitioning $\Rr^d$ into cubes with vertexes in $\mathbb Z^d/n$, one might quantize a continuous probability measure $\rho$ into a measure $\rho_n$ with countable support, whose entropy satisfies
+\begin{equation}\label{eq:expansion_law}
+H(\rho_n) = D\ln n + h + o(1),
+\end{equation}
+where $D=d$ and $h=h(\rho)$ is the differential entropy of $\rho$ {% cite Kolmogorov1993 %}. Renyi {% cite Renyi1959 %} turned this into a definition: if $\rho$ is now a general law and the expansion \eqref{eq:expansion_law} holds for some constants $D,h\in \Rr$, one calls $D$ the information dimension of $\rho$ and $h$ its $d$-dimensional entropy. He wondered about the "topological meaning" of the entropic dimension, which might be  noninteger. 
 
 
+In {% cite Vigneaux2023typicality %} I introduced an *asymptotic equipartition property* for discrete-continuous mixtures or, more generally, of convex combination of rectifiable measures on $\Rr^d$. In particular, it gives an interpretation for the information dimension $D$ of one of these measures $\rho$: 
+the product $(\Rr^d)^n$ naturally splits into strata of different dimensions, and the typical realizations of $\rho^{\otimes n}$ concentrate on strata of a few dimensions close to $nD$. I also obtained volume estimates (in terms of Hausdorff measures) for the typical realizations in each typical stratum. (A measure $\rho$ is $m$-rectifiable if there exists a set $E$, equal to a  countable union of $C^1$ manifolds, such that $\rho$ has a density with respect to the restricted HAusdorff measure $\mathcal H^m|_E$, which is the natural notion of $m$-dimensional volume on $E$.)
+
+**Presentations:**
+* ["On the entropy of rectifiable and stratified measures" [slides]]({{site.baseurl}}/assets/pdf/slides/GSI23-stratified.pdf), GSI 2023, Saint Malò, France. 
+* ["Typicality for stratified measures" [slides]]({{site.baseurl}}/assets/pdf/slides/ETH-2023-stratified.pdf), ETH Zurich, 2023. 
+
+## Magnitude and diversity {#magnitude}
+
+Magnitude {% cite Leinster2008 %} is a common categorical generalization of cardinality and of the Euler characteristic of a simplicial complex. It applies to enriched categories, of which metric spaces are a notable example, and in that case gives a new isometric invariant of metric spaces {% cite Leinster2013 %}. Applied to infinite metric spaces, this metric invariant---somehow surprisingly---encodes a lot of nontrivial geometric information, such as Minkowski dimension, volume, surface area, etc.{% cite Meckes2015 Barcelo2018 Gimperlein2021 %}. Partial differential equations, pseudodifferential operators and potential theory have played an important role in establishing these results.
+
+In joint work with Stephanie Chen {% cite Chen2023formula %} (SURF program 2022), we gave a new formula for the magnitude of a finite category $\cat{A}$ in terms of the pseudoinverse of the  matrix 
+\begin{equation}
+\zeta:\Ob\cat{A}\times \Ob \cat{A}\to \Zz, \, (a,b)\mapsto |\Hom(a,b)|.
+\end{equation}
+This was closer to the definition for posets {% cite Rota1964 %} that had inspired Leinster. Our work also rederived algebraic properties of the magnitude from properties of the pseudoinverse.
+ 
+ In {% cite Vigneaux2024combinatorial %} I propose a novel combinatorial interpretation for the inverse or pseudoinverse of $\zeta$, along the lines of {% cite Brualdi2008 %}. The interpretation generalizes a celebrated theorem by Philip Hall {% cite Rota1964 %}:
+ \begin{equation}
+ \zeta^{-1}(a,b)=\sum_{k\geq 0} (-1)^k \\# \\{ \text{nondegenerate paths between  }a\text{ and }b \\}
+ \end{equation}
+  when $a$ and $b$ are elements of a finite poset (in this case $\zeta$ is invertible; its inverse is known as Möbius function). 
+
+  What does this have to do with information? Following Boltzmann ideas, entropy can be seen as an extension of cardinality: when all elements of a finite set $X$ are equiprobable, the entropy is $\ln |X|$. In turn, magnitude is a generalization of cardinality, and it is natural to introduce a probabilistic extension of it: "categorical entropy". Stephanie and I 
+  {% cite Chen2023formula %} proposed that categorical entropy is defined on finite categories equipped with a probability $p$ on objects and a "kernel" $\theta:\Ob\cat{A} \times \Ob \cat{A} \to [0,\infty)$ such that $\theta(a,a')=0$ whenever $a\not\to a'$ via the formula 
+ \begin{equation}\label{eq:cat_entropy}
+ \mathcal H(A,p,\theta) = - \sum_{a\in \Ob \cat A} p(a) \ln \left(\sum_{b\in \Ob \cat A} \theta(a,b)p(b) \right).
+ \end{equation}
+This function shares many "nice" properties with Shannon entropy. In the context of metric spaces equipped with probability, \eqref{eq:cat_entropy} appears as a measure of diversity between species when $p$ is its relative abundance and $\theta$ measures their similarity {% cite Leinster2012 %}.
+
+**Presentations:**
+* ["A Combinatorial Approach to Categorical Möbius Inversion and Magnitude" [video]](https://www.youtube.com/watch?v=CGzOVeQLLnA), Applied Algebraic Topology Network, 2024.
+* ["Categorical Magnitude and Entropy" [slides]]({{site.baseurl}}/assets/pdf/slides/GSI23-magnitude.pdf), GSI 2023, Saint Malo, France.
 
 
+# Bibliography
 
-## Magnitude and diversity
-
-Leinster
-
-See cardinality as 
-
-
-## Combinatorial models for generalized entropies
-
-
-
-## Other interests
-
-
-* Optimal transport in classical and quantum probability; functional inequalities.
-* Information processing in the brain; neurogeometry; computational neuroscience.
-* Information theoretic limits for disentangled representations in the framework of statistical learning theory.
+{% bibliography --cited %}

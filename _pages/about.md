@@ -13,8 +13,8 @@ profile:
   #   <p>123 your address street</p>
   #   <p>Your City, State 12345</p>
 
-news: false  # includes a list of news items
-latest_posts: false  # includes a list of the newest posts
+news: true  # includes a list of news items
+latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
@@ -23,15 +23,13 @@ Currently, I am an Olga Taussky and John Todd Instructor in Mathematics at Calte
 
 Previously, I was a postdoctoral researcher at the Max Planck Institute for Mathematics in the Sciences. In 2019, I obtained my Ph.D. in Mathematics at the University of Paris under the supervision of Daniel Bennequin.
 
-I'm broadly interested in the concept of **information**. My work deals with:
+I'm broadly interested in the concept of **information**. More precisely:
+* Characterization of information measures, mainly *information topology*. 
+* Information dimension and measures with geometric structure.
+* Magnitude and diversity.
+* Explainable AI and mechanistic interpretability of neural networks. 
 
-* Characterizations of information measures such as entropy (operational, algebraic, and topological characterizations).
-* Dimension theory: relationship between fractal dimensions and information dimension.
-* Probability measures with geometric structure, such as rectifiable measures and stratified measures.  
-* Magnitude and diversity as categorical generalizations of cardinality and entropy, respectively.
-* Combinatorial ("microcanonical") models for generalized entropies.
-* Optimal transport and functional inequalities. 
-
+Here's my [academic CV]({site.baseurl}}/assets/pdf/Academic-CV-Aug2024.pdf). 
 
 
 
