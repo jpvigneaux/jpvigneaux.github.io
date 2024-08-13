@@ -23,11 +23,17 @@ Currently, I am an Olga Taussky and John Todd Instructor in Mathematics at Calte
 
 Previously, I was a postdoctoral researcher at the Max Planck Institute for Mathematics in the Sciences. In 2019, I obtained my Ph.D. in Mathematics at the University of Paris under the supervision of Daniel Bennequin.
 
-I'm broadly interested in the concept of **information**. More precisely:
+I'm broadly interested in mathematical aspects of **information theory**, particularly in connection with category theory and  geometry (metric geometry, geometric measure theory, ...). 
+
+My published work can be divided in three different areas:
 * Characterization of information measures, mainly *information topology*. 
 * Information dimension and measures with geometric structure.
 * Magnitude and diversity.
-* Explainable AI and mechanistic interpretability of neural networks. 
+ 
+I'm currently mostly working on explainable AI and mechanistic interpretability of neural networks.
+For further details, see the [research section]({{site.baseurl}}/research/). 
+
+
 
 Here's my [academic CV]({site.baseurl}}/assets/pdf/Academic-CV-Aug2024.pdf). 
 
