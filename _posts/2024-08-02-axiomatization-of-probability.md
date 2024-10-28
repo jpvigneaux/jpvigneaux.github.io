@@ -37,7 +37,7 @@ toc:
 
 ## Origins  
 
-I want to talk little a bit about the history of probability to put certain ideas that you might already have about the subject in context. It'll also help us understand better the role of Kolmogorov's axiomatization. This won't be a historically thorough account by any means. 
+First, I'd like to talk a little bit about the history of probability to put certain ideas that you might already have about the subject in context. It'll also help us understand better the role of Kolmogorov's axiomatization. This won't be a historically thorough account by any means. 
 
 Although randomness is present in ancient philosophy (e.g. in Democritus), there was no mathematical treatment of probability in antiquity.
 

@@ -35,7 +35,8 @@ For further details, see the [research section]({{site.baseurl}}/research/).
 
 
 
-Here's my [academic CV]({site.baseurl}}/assets/pdf/Academic-CV-Aug2024.pdf). 
+Here's my [academic CV]({{site.baseurl}}/assets/pdf/Academic-CV-Aug2024.pdf). 
+
 
 
 
