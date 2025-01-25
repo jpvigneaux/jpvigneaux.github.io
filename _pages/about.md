@@ -19,7 +19,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Currently, I am an Olga Taussky and John Todd Instructor in Mathematics at Caltech, mentored by <a href="https://www.its.caltech.edu/~matilde/">Matilde Marcolli</a>. We co-organize the <a href="https://www.its.caltech.edu/~vigneaux/igps/">Information, Geometry, and Physics Seminar</a>.
+I am currently in the job market! 
+
+From October 2021 to December 2024, I served as an Olga Taussky and John Todd Instructor in Mathematics at Caltech, mentored by <a href="https://www.its.caltech.edu/~matilde/">Matilde Marcolli</a>. We co-organized the <a href="https://www.its.caltech.edu/~vigneaux/igps/">Information, Geometry, and Physics Seminar</a>.
 
 Previously, I was a postdoctoral researcher at the Max Planck Institute for Mathematics in the Sciences. In 2019, I obtained my Ph.D. in Mathematics at the University of Paris under the supervision of Daniel Bennequin.
 
