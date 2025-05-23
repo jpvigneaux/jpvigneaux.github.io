@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Mathematician
+subtitle: AI and Mathematics
 
 profile:
   align: right
@@ -25,19 +25,14 @@ From October 2021 to December 2024, I served as an Olga Taussky and John Todd In
 
 Previously, I was a postdoctoral researcher at the Max Planck Institute for Mathematics in the Sciences. In 2019, I obtained my Ph.D. in Mathematics at the University of Paris under the supervision of Daniel Bennequin.
 
-I'm broadly interested in mathematical aspects of **information theory**, particularly in connection with category theory and  geometry (metric geometry, geometric measure theory, ...). 
+I'm currently  working on interpretability of transformer-based LLMs, with a particular focus on the geometry of latent spaces and on compositionality. For further details, see the [research section]({{site.baseurl}}/research/). 
 
-My published work can be divided in three different areas:
+More broadly, I'm interested in mathematical aspects of **information theory**, particularly in connection with category theory and  geometry (metric geometry, geometric measure theory, ...).  My published work can be divided in three different areas:
 * Characterization of information measures, mainly *information topology*. 
 * Information dimension and measures with geometric structure.
 * Magnitude and diversity.
- 
-I'm currently mostly working on explainable AI and mechanistic interpretability of neural networks.
-For further details, see the [research section]({{site.baseurl}}/research/). 
 
-
-
-Here's my [academic CV]({{site.baseurl}}/assets/pdf/Academic-CV-Aug2024.pdf). 
+Here's my [academic CV]({{site.baseurl}}/assets/pdf/Academic-CV-Feb2025.pdf). 
 
 
 
