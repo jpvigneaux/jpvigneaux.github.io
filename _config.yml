@@ -185,6 +185,9 @@ collections:
   Ma4:
     output: true
     permalink: /Ma4/:path/
+  Research:
+    output: true
+    permalink: /Research/:path/
 
 announcements:
   enabled: false
