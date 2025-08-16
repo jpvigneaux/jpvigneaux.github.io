@@ -27,12 +27,12 @@ From October 2021 to December 2024, I served as an Olga Taussky and John Todd In
 
 Previously, I was a postdoctoral researcher at the Max Planck Institute for Mathematics in the Sciences. In 2019, I obtained my Ph.D. in Mathematics at the University of Paris under the supervision of Daniel Bennequin.
 
-My mathematical work deals with **information theory** in connection with category theory and  geometry (metric geometry, geometric measure theory, ...).  My publications in this demain can be divided in three different areas:
+Mathematically, I've worked on **information theory** in connection with category theory and  geometry (metric geometry, geometric measure theory, ...).  Some notable interests, reflected in my publication record, are:
 * Characterization of information measures, mainly *information topology*. 
 * Information dimension and measures with geometric structure.
 * Magnitude and diversity.
 
-Here's my [academic CV]({{site.baseurl}}/assets/pdf/Academic-CV-Feb2025.pdf). 
+Here's my [academic CV (last update: February 2025)]({{site.baseurl}}/assets/pdf/Academic-CV-Feb2025.pdf). 
 
 
 
