@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Juan Pablo
 middle_name: ""
 last_name: Vigneaux
-email: vigneaux@caltech.edu
+email: jpvigneaux@northwestern.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Juan Pablo Vigneaux's personal website. Mathematics and related topics. 
 footer_text: >
