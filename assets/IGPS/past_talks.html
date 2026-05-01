@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Information, Geometry and Physics Seminar</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+      body {
+        background-color: #EEEEEE;
+        font-family: "Roboto";
+        font-weight: 300;
+        max-width: 80%; margin: 0 auto;
+      }
+      h1 {
+        font-family: "Merriweather";
+        text-align: left;
+        font-size: 1.8em;
+        font-wight: 400;
+        color: #555;
+        margin-top: 40px;
+      }
+      h1 img {
+        font-family: "Merriweather";
+        height: 1.8em;
+        margin-right: 20pt;
+        margin-top: 11pt;
+      }
+      
+      @media  (max-width: 1000px) {
+        h1 img, h1 {
+            display: block;
+            text-align: left;
+            
+        }
+        h1 img {
+            margin-top: 20px;
+            height: 60px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        h1 {
+          margin-left: 20pt;
+        }
+      }
+
+      @media  (min-width: 1001px) {
+          h1 img {
+            float: left;
+              margin-left: 20pt; }
+      }
+
+      
+      
+      h2 {
+        font-family: "Merriweather";
+        text-align: left;
+        font-size: 1.3em;
+        color: #555;
+        margin-top: 20px;
+        margin-left: 20pt;
+        margin-bottom: 5pt;
+      }
+      .headertext {
+        text-align:left;
+        font-size:1.1em;
+        color:#777;
+        margin-left: 20pt;
+        margin-bottom: 5pt;
+      }
+      .talk {
+        /* width: 100%; */
+        margin: 0 auto; 
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: box-shadow 0.3s ease-in-out;
+          position: relative;
+  left: -20px; 
+      }
+      .talk:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      .talk-title {
+        /* font-family: "Merriweather"; */
+        font-size: 1.4em;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .talk-speaker {
+        font-weight: 300;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .talk-date {
+        font-style: italic;
+        margin-bottom: 1em;
+        font-weight: 300;
+        color: #777;
+      }
+      .talk-date b{
+        font-style: italic;
+        font-weight: 500;
+        color: #ff782f;
+      }
+      .talk-abstract {
+        margin-top: 5px;
+        font-size: 0.9em;
+        font-weight: 300;
+        color: #444;
+      }
+      
+      a {
+        color: #555;
+        text-decoration: none; /* Removes underline from link */
+      }
+      a:hover {
+        text-decoration: underline; /* Adds underline when link is hovered over */
+      }
+      a[href^="http"]::after,
+      a[href^="https://"]::after
+      {
+        content: "";
+        width: 0.6em;
+        height: 0.6em;
+        margin-left: 0.2em;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+      }
+      .talk-date a {
+         color: #ff782f;
+         font-weight: 500;
+         text-decoration: none; /* Removes underline from link */
+         
+      }
+      .talk-date a:hover {
+        text-decoration: underline; /* Adds underline when link is hovered over */
+      }
+      .talk-date a[href^="http"]::after,
+      .talk-date a[href^="https://"]::after
+      {
+        content: "";
+        width: 0.7em;
+        height: 0.7em;
+        margin-left: 0.2em;
+        color: #ff782f;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff782f' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+      }
+      .talk-speaker a {
+        color: #333;;
+        text-decoration: none; /* Removes underline from link */
+      }
+      .talk-speaker a:hover {
+        text-decoration: underline; /* Adds underline when link is hovered over */
+      }
+      .talk-speaker a[href^="http"]::after,
+      .talk-speaker a[href^="https://"]::after
+      {
+        content: "";
+        width: 0.6em;
+        height: 0.6em;
+        margin-left: 0.2em;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+      }
+
+    </style>
+  </head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-899NMDFVW3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-899NMDFVW3');
+</script>
+  
+
+    <h1> <img src="caltech-new-logo.png" alt="Caltech logo"></h1> 
+    <h1> Information, Geometry and <br> Physics Seminar</h1>
+    <div class="headertext">Organized by <a href="http://www.its.caltech.edu/~matilde/">Matilde Marcolli</a> and <a href="https://webusers.imj-prg.fr/~juan-pablo.vigneaux/">Juan Pablo Vigneaux</a>.</div>
+
+    <h2>Past Talks (AY 2024-25) </h2>
+
+    <div class="talk">
+      <div class="talk-date">Wed. November 6th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">The strong law of large numbers as an axiom</div>
+      <div class="talk-speaker"><a href="http://tobiasfritz.science/">Tobias Fritz</a>, Department of Mathematics, University of Innsbruck</div>
+      <p id="abstract2" class="talk-abstract">
+        The theory of Markov categories has recently gained prominence as a
+framework for general theories of uncertainty, within which one can try to
+axiomatize probability theory without reference to measure theory. After an
+introduction to Markov categories together and an overview of existing results,
+I will explain how to formulate the strong law of large numbers within this
+framework. This is based on axiomatizing the formation of an empirical
+distribution from an infinite sequence of samples. I will sketch how to use the
+law of large numbers as an axiom to derive the de Finetti theorem.
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. Oct 30th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">Linguistic Structure from a Bottleneck on Sequential Information Processing</div>
+      <div class="talk-speaker"><a href="https://sites.socsci.uci.edu/~rfutrell/">Richard Futrell</a>, Department of Language Science, UC Irvine</div>
+      <p id="abstract2" class="talk-abstract">
+        Human language is a unique form of communication in the natural world. Most fundamentally, it has systematic structure, meaning that signals can be broken down into component parts that are individually meaningful -- roughly, words -- which are combined in a regular, hierarchical way to form sentences. Furthermore, the way in which these parts are combined maintains a kind of locality: words are usually concatenated together, and they form contiguous phrases. <br>
+
+I argue that natural-language-like systematicity arises in codes that minimize predictive information, a measure of statistical complexity that represents the minimum amount of information necessary for predicting the future of a sequence based on its past (Bialek, Nenenman & Tishby, 2001). In simulations, I show that codes that minimize excess entropy factorize their source distributions into groups of approximately independent components which are expressed systematically and locally, corresponding to words and phrases. Next, drawing on large bodies of naturalistic text, I show that human languages are structured in a way that reduces predictive information at the level of phonology, morphology, syntax, and semantics. These results establish a link between the statistical and algebraic structure of human language.
+    </p>
+    </div>
+
+
+    <div class="talk">
+      <div class="talk-date">Wed. Oct 23th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">An entropic view of machine learning</div>
+      <div class="talk-speaker"><a href="https://kavlicosmo.uchicago.edu/people/profile/akhil-premkumar/">Akhil Premkumar</a>, KICP, University of Chicago</div>
+      <p id="abstract2" class="talk-abstract">
+        In light of the recent advances in generative modeling, we can view learning as the process of assigning probabilities to plausible outcomes in a high dimensional event space. The miracle of modern AI is that such a task is viable even when the data is sparse in relation to the total volume of possibilities. One wonders why it works, and how far we can stretch this magic---what is the smallest number of samples needed to learn a distribution, and, is it possible to continue learning after the training data has been depleted? I tackle these questions by borrowing ideas from information theory, statistical mechanics, thermodynamics, and optimal transport. I will illustrate some experiments with diffusion models that reinforce our theoretical insights.<br><br>
+        Based on <a href="https://arxiv.org/abs/2409.03817">arXiv:2409.03817</a> + ongoing work.
+    </p>
+    </div>
+    
+    <div class="talk">
+      <div class="talk-date">Wed. Oct 16th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title"> A categorical approach to Lyapunov stability</div>
+      <div class="talk-speaker"><a href="https://joe-moeller.com/">Joe Moeller</a>, AMBER Lab, Caltech</div>
+      <p id="abstract2" class="talk-abstract">
+        Lyapunov functions characterize stability for dynamical systems, and Lyapunov analysis forms the foundations for modern nonlinear control. We present a categorical framework for Lyapunov theory, generalizing stability analysis through Lyapunov functions. Core to our approach is the axioms underlying a setting for stability, which give the necessary ingredients for "doing Lyapunov theory" in a category of interest. With these minimal assumptions we define stability, formulate Lyapunov morphisms, and demonstrate that the existence of Lyapunov morphisms imply stability. This is applied to systems, framed as coalgebras, wherein we recover the classic Lyapunov conditions for stability and asymptotic stability.
+    </p>
+    </div>
+    
+    <h2>Past Talks (AY 2023-24) </h2>
+
+    <div class="talk">
+      <div class="talk-date">Wed. May 8th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">Complete constraints on hyperbolic surface spectra from the conformal bootstrap</div>
+      <div class="talk-speaker"><a href="https://www.math.princeton.edu/people/anshul-adve">Anshul Adve</a>, Department of Mathematics, Princeton University</div>
+      <p id="abstract2" class="talk-abstract">
+        Given a multiset S of nonnegative real numbers and an integer g at least 2, when is S the Laplace spectrum of a closed hyperbolic surface of genus g? Recently, it was observed by physicists that one can associate to each pair (S,g) an infinite system of bilinear equations in infinitely many variables which has a solution if S is such a Laplace spectrum. They then used these equations to prove nearly sharp bounds on low energy eigenvalues of low genus surfaces. In this talk, as a step toward explaining why their bounds are so sharp, I will describe a converse theorem: if the equations admit a solution, and if S obeys a weak form of the Weyl law, then S is such a Laplace spectrum. There is a strong analogy between this story and the conformal bootstrap approach to conformal field theory. From the bootstrap point of view, a CFT is specified by its spectrum of scaling dimensions together with its OPE coefficients, where the OPE coefficients satisfy an infinite system of bilinear "crossing equations." The ultimate goal of the bootstrap is to classify all possible spectra and OPE coefficients which satisfy the crossing equations. My main theorem can be regarded as realizing this goal in the analogous setting of hyperbolic surfaces.
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. May 15th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">Almost-idempotent quantum channels and approximate $C^*$-algebras</div>
+      <div class="talk-speaker"><a href="https://iqim.caltech.edu/profile/alexei-y-kitaev/">Alexei Kitaev</a>, Caltech</div>
+      <p id="abstract2" class="talk-abstract">
+        Let $\Phi$ be a unital completely positive map on the space of operators on some Hilbert space. We assume that $\Phi$ is almost idempotent, namely, $\|\Phi^2-\Phi\|_{\mathrm{cb}} \le\eta$, and construct a corresponding "$\varepsilon$-$C^*$ algebra" for $\varepsilon=O(\eta)$. This type of structure has the axioms of a unital $C^*$ algebra but the associativity and other axioms involving the multiplication and the unit hold up to $\varepsilon$. We further prove that any finite-dimensional $\varepsilon$-$C^*$ algebra is $O(\varepsilon)$-isomorphic to a genuine $C^*$ algebra. These bounds are universal, i.e. do not depend on the dimensionality or other parameters.
+      </p>
+    </div>
+    
+
+    <div class="talk">
+      <div class="talk-date">Wed. May 22nd, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">An Enriched Category Theory of Language</div>
+      <div class="talk-speaker"><a href="https://www.math3ma.com/about">Tai-Danae Bradley</a>, Sandbox AQ</div>
+      <p id="abstract2" class="talk-abstract">
+        The success of large language models is striking, especially given that the training data consists of raw, unstructured text. In this talk, we will propose that category theory can provide a natural framework for investigating this passage from texts, and probability distributions on them, to a more semantically meaningful space. Equipped with motivation from an analogy between linear algebra and category theory, we will define a category of expressions in language enriched over the unit interval and afterwards pass to enriched copresheaves on that category. We will see that the latter setting has rich mathematical structure and comes with ready-made tools in which to explore that structure.
+      </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. April 17th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">Toward a Control Theory of LLMs</div>
+      <div class="talk-speaker"><a href="https://aman-bhargava.com/">Aman Bhargava</a>, Computation and Neural Systems, Caltech and <a href="https://scholar.google.com/citations?user=gzG4qoIAAAAJ&hl=en">Shi-Zhuo Looi</a>, Department of Mathematics, Caltech</div>
+      <p id="abstract2" class="talk-abstract">
+        Prompt engineering is crucial for deploying LLMs but is poorly understood mathematically. We formalize LLM systems as a class of discrete stochastic dynamical systems to explore prompt engineering through the lens of control theory. We investigate the reachable set of output token sequences $\mathcal R_y(\mathbf x_0)$ for which there exists a control input sequence $\mathbf u$ for each $\mathbf y \in \mathcal R_y(\mathbf x_0)$ that steers the LLM to output $\mathbf y$ from initial state sequence $\mathbf x_0$.
+        We offer analytic analysis on the limitations on the controllability of self-attention in terms of reachable set, where we prove an upper bound on the reachable set of outputs $\mathcal R_y(\mathbf x_0)$ as a function of the singular values of the parameter matrices.
+        We present complementary empirical analysis on the controllability of a panel of LLMs, including Falcon-7b, Llama-7b, and Falcon-40b.
+        Our results demonstrate a lower bound on the reachable set of outputs $\mathcal R_y(\mathbf x_0)$ w.r.t. initial state sequences $\mathbf x_0$ sampled from the Wikitext dataset.
+        We find that the correct next Wikitext token following sequence $\mathbf x_0$ is reachable over 97\% of the time with prompts of $k\leq 10$ tokens.
+        We also establish that the top 75 most likely next tokens, as estimated by the LLM itself, are reachable at least 85\% of the time with prompts of $k\leq 10$ tokens.
+        Intriguingly, short prompt sequences can dramatically alter the likelihood of specific outputs, even making the least likely tokens become the most likely ones.
+        This control-centric analysis of LLMs demonstrates the significant and poorly understood role of input sequences in steering output probabilities, offering a foundational perspective for enhancing language model system capabilities.
+         
+
+      </p>
+    </div>
+    
+    <div class="talk">
+      <div class="talk-date">Wed. April 10th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">Predictive coding in neural networks can recover the environment's map</div>
+      <div class="talk-speaker"><a href="https://scholar.google.com/citations?user=rX8AYjIAAAAJ&hl=en">James Gornet</a>, Caltech</div>
+      <p id="abstract2" class="talk-abstract">
+        Mapping is a general mechanism for generating an internal representation of sensory information. While spatial maps facilitate navigation and planning within an environment, mapping is a ubiquitous function that extends beyond visual-spatial mapping. However, it has been unclear how a single mechanism can generate both spatial and non-spatial maps. In this talk, I discuss how predictive coding—by predicting sensory data from past sensory experiences—provides a basic, general mechanism for charting both spatial and non-spatial maps. In this theoretical framework, an agent traverses some environment; the spatial structure of an agent's path is embedded in the sequential structure of agent's video observations. I demonstrate that a neural network that performs predictive coding can construct an implicit spatial map of an environment by assembling information from local paths into a global frame within the neural network's latent space. In addition, the neural network's latent variables generate firing patterns that resemble place fields in the rodent hippocampus. Predictive coding can be performed over any sensory modality that has some temporal sequence. Large language models such as GPT-4, for example, train on causal word prediction, a form of predictive coding, and build internal maps that support generalized reasoning. These results all suggest that predictive coding might provide a unified theory for building representations of information—connecting disparate theories including place cell formation in the hippocampus and human language. 
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. March 27th, 2024 &#8212; 4pm -- <a href="https://caltech.zoom.us/j/89019012993">Zoom link</a> (Caltech account required)</div> 
+      <div class="talk-title">Using Physics as a Microscope to Dissect Transcriptional Dynamics in Development</div>
+      <div class="talk-speaker"><a href="https://www.christianshewmake.com/">Hernan Garcia</a>, Department of Molecular & Cell Biology and 
+        Department of Physics
+        UC Berkeley</div>
+      <p id="abstract2" class="talk-abstract">
+        Over the last few decades we have largely identified the repressors and activators that shape gene
+        expression patterns in developing embryos and that, in turn, dictate cellular fates. Yet, despite amassing
+        this great reservoir of knowledge, we are still incapable of predicting how the number, placement and
+        affinity of binding sites for these transcription factors in regulatory DNA dictate gene expression
+        patterns in space and time. Achieving such predictive understanding calls for going beyond molecular
+        parts lists and for obtaining the in vivo biochemical information necessary for fueling theoretical models
+        of transcriptional regulation in developing animals.
+         
+        In this talk, I will show how we are using physics as a “microscope” to uncover the molecular
+        mechanisms by which activators and repressors dictate transcription in space and time in developing
+        animals. Specifically, using novel quantitative tools that we have developed for precision measurements,
+        I will show that most developmental genes are transcribed in stochastic bursts, and that many
+        transcription factors regulate gene expression by modulating the frequency, duration, and/or amplitude
+        of these bursts. We will then engage in an iterative dialogue between theoretical models and
+        quantitative experiments aimed at revealing the mechanisms underlying this control of transcriptional
+        bursting. Our results challenge the textbook picture of activator and repressor action based on stable
+        protein-protein interactions and call for a description of transcriptional control that acknowledges that
+        the nucleus is not a bag of well-mixed transcription factors. Most importantly, our work sets a path
+        forward for reaching a predictive understanding of cellular decision making and demonstrates how a
+        quantitative dialogue between theory and experiment can shed light on biological mechanisms beyond
+        the reach of even the best super resolution microscopes.
+      </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. January 17th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">Lie Groups and Hierarchy for Neural Visual Representations</div>
+      <div class="talk-speaker"><a href="https://www.christianshewmake.com/">Christian Shewmake</a>, Redwood Center for Theoretical Neuroscience, UC Berkeley</div>
+      <p id="abstract2" class="talk-abstract">
+        How do brains represent the world? An emerging set of findings in neuroscience is beginning to illuminate a new paradigm for understanding the neural code. Across sensory and motor regions of the brain, neural structures are found to mirror the geometric structure of the world states they represent—either in their explicit anatomical arrangement or in the underlying low-dimensional manifolds traversed by their dynamics. This phenomenon can be observed in the circuit of neurons representing orientation in the fly, spatial position in place cells and grid cells in the rat, and changes in 3D orientation in human semicircular canals, among others. Such findings suggest that brains across species and sensory modalities have evolved a general computational strategy that leverages geometry, Bayesian inference, and dynamical systems to represent the structure of the world. 
+        <br>Can these geometric ideas be extended beyond representations of low-dimensional spaces, such as self position and orientation, to complex spaces such as visual scenes? Indeed, a basic understanding of visual representations in the primate visual cortical hierarchy remains elusive beyond V1. Likewise, a longstanding goal in unsupervised representation learning has been the discovery of low-dimensional, independent factors of variation latent in visual data. The goal of this talk is to introduce the emerging geometric paradigm in neuroscience and explore its implications for unsupervised learning of visual scene representations in brains and machines. 
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. January 10th, 2024 &#8212; 4pm</div> 
+      <div class="talk-title">From quantum learning theory to dimension-free Remez inequalities</div>
+      <div class="talk-speaker"><a href="https://joeslote.com/">Joseph Slote</a>, CMS, Caltech</div>
+      <p id="abstract2" class="talk-abstract">
+        Harmonic analysis has long been a powerful tool in theoretical computer science, and we are starting to see applications in the noncommutative world of quantum computing. In this talk we will discuss how to learn quantum operators from very little information, thanks to noncommutative analogues of some classical inequalities in harmonic analysis: Bohnenblust—Hille-type inequalities. To prove these we exploit the geometry of Heisenberg-Weyl eigenspaces to reduce to a commutative question, which in turn is settled by a dimension-free Remez-type inequality, the first of its kind.
+
+        <br>We will dive into some proof ideas according to time and interest.
+
+<br> Based on joint works with Lars Becker, Ohad Klein, Alexander Volberg, and Haonan Zhang.
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. November 15th, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">TBA</div>
+      <div class="talk-speaker"><a href="https://scholar.google.com/citations?user=f8ScaZoAAAAJ&hl=it">Giuseppe di Giulio, University of Würzburg</a></div>
+      <p id="abstract2" class="talk-abstract">
+          TBA
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. November 8th, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">Higher Information: The untold topological secrets of measures and states </div>
+      <div class="talk-speaker"><a href="https://tommainiero.com/">Tom Mainiero, St Joseph's University</a></div>
+      <p id="abstract2" class="talk-abstract">
+        In the futuristic year 2023, an ex cohomological cop (Harrison Ford) is pulled out of retirement to track down obstructions to the factorizability of multipartite measures: entangled states and their classical counterparts...joint probability measures. A vast conspiracy is uncovered: associated to every multipartite measure is an emergent space whose topology encodes non-local correlations between various subsystems. Probing this space with tools with homology, homotopy, and category theory reveals evidence that entropy and mutual information are Euler characteristics: puppets in a larger informatic ruse. Join as we slowly uncover pieces of the big picture, unmasking filthy rich measures of shared information higher up on the food chain (complex).
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. October 25th, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">Rigorous results about entropies in QFT</div>
+      <div class="talk-speaker"><a href="https://mathdept.ucr.edu/feng-xu-publications">Feng Xu, UC Riverside</a></div>
+      <p id="abstract2" class="talk-abstract">
+        In this talk I will give an introduction to some recent mathematical results about relative entropies 
+        in QFT. The talk should be accessible to graduate students. 
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. October 11th, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">Quantifying emergent effects through homological algebra</div>
+      <div class="talk-speaker"><a href="http://www.silva.ucsd.edu/">Johnny Jingze Li, Mathematical Neuroscience Lab, UCSD</a></div>
+      <p id="abstract2" class="talk-abstract">
+        Emergent effects of complex systems is commonly understood as novel properties, patterns, or behaviors of systems that are not present in their components, sometimes expressed as “the whole is more than the sum of its parts”.  I will discuss a framework based on (Adam, 2017) (link: https://elieadam.com/eadam_PhDThesis.pdf) that gives a measure of emergent effect as the “loss of exactness” computed from local structures, through category theory, homological algebra and quiver representations, and show that the derived functor that encodes emergent effects is related to information loss. I will also discuss potential connections to biological neural networks and renormalization groups.
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. October 4th, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">Bounding spectral gap for Laplacian and Dirac operator</div>
+      <div class="talk-speaker">Yixin Xu, Caltech</div>
+      <p id="abstract2" class="talk-abstract">
+          Associativity of point-wise multiplication between functions provides constraints on the spectral data of a manifold. In this talk, I will discuss how the method of semi-definite programming allows one to obtain upper bounds for the lowest non-zero eigenvalues of Laplacian and Dirac operator on 2d hyperbolic surfaces and orbifolds equipped with a spin structure. A numerical algorithm based on Selberg trace formula shows the [0;3,3,5] hyperbolic triangle and the Bolza surface nearly saturates the numerical bound at genus 0 and genus 2. This method also produces bounds that are specific to hyperelliptic surfaces. Our approach is inspired by the method of conformal bootstrap, which is a widely adopted technique to extract constraints on conformal field theories from basic self-consistency conditions.
+    </p>
+    </div>
+
+    <h2>Past Talks (AY 2022-23) </h2>
+
+    <div class="talk">
+      <div class="talk-date">Wed. July 26, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">Grothendieck classes of quadric hypersurfaces</div>
+      <div class="talk-speaker"><a href="https://homepages.warwick.ac.uk/staff/Goncalo.Tabuada/">Gonçalo  Tabuada, University of Warwick</a></div>
+      <p id="abstract2" class="talk-abstract">
+        The Grothendieck ring of varieties, introduced in a letter from Alexander Grothendieck to Jean-Pierre Serre (August 16th 1964), plays an important role in algebraic geometry. However, despite the efforts of several mathematicians, the structure of this ring still remains poorly understood. In this talk, in order to better understand the Grothendieck ring of varieties, I will describe some new structural properties of the Grothendieck classes of quadric hypersurfaces. More specifically, by combining the recent theory of noncommutative motives with the classical theory of motives, I will show that if two quadric hypersurfaces have the same Grothendieck class, then they have the same even Clifford algebra and the same signature. As an application, this implies in numerous cases (e.g., when the base field is a local or global field) that two quadric hypersurfaces have the same Grothendieck class if and only if they are isomorphic.
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. July 19, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">Von Neumann algebras and quantum gravity </div>
+      <div class="talk-speaker"><a href="https://physics.mit.edu/faculty/hong-liu/">Hong Liu, MIT</a></div>
+      <p id="abstract2" class="talk-abstract">
+        The classifications of von Neumann algebras can be interpreted as classifying entanglement patterns of general quantum systems. They can thus play significant roles in our explorations of quantum gravity. I discuss some recent examples in using them to understand spacetime structure, including emergence of space and time in the AdS/CFT duality.  
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. June 28, 2023 &#8212; 2pm</div> 
+      <div class="talk-title"> Optimal transport in free probability</div>
+      <div class="talk-speaker"><a href="https://davidjekel.com/">David Jekel, University of California, San Diego</a></div>
+      <p id="abstract2" class="talk-abstract">
+        Free probability is a theory of random variables which do not commute under multiplication, which can be realized as operators on a Hilbert space.  Voiculescu showed that free probability describes the large N behavior of independent random N x N matrices in many situations.  This talk discusses the analog of optimal transport theory for free probability, as well as the large N behavior of optimal transport for certain random matrix models.  In the free setting, there are many obstructions to optimal transport that don't exist in the classical setting.  However, there is still an analog of Monge-Kantorovich duality.  Moreover, for certain classes of non-commutative random variables (those associated to free Gibbs laws), we have a very good understanding of the optimal transport maps and how they arise from the random matrix models in the large N limit.
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date"><b>Thursday</b> June 8, 2023 &#8212; 2pm <b>@ Linde Hall 387</b></div> 
+      <div class="talk-title"> Quantum Symmetry in Classical and Noncommutative Geometry</div>
+      <div class="talk-speaker"><a href="https://scholar.google.com/citations?user=qbDIVLAAAAAJ&hl=en">Debashish Goswami, Indian Statistical Institute Kolkata</a></div>
+      <p id="abstract2" class="talk-abstract">
+        Quantum groups are well-known symmetry objects in mathematics and mathematical physics. In this talk, we'll give a brief overview of the theory of quantum isometry groups of classical and noncommutative manifolds a la Connes developed by the speaker and collaborators over the last decade. We'll mainly work in the framework of compact quantum groups a la Woronowicz and study their (co)actions on the underlying C* algebra of a noncommutative manifold (completion of the algebra associated to the spectral triple) commuting with a suitable Dirac operator or Laplacian. <br>
+This is based on several  joint works with J. Bhowmick, A. Skalski, T. Banica, S. Joardar, P. Etingof, C. Walton,  A. Mandal and A. Chirvasitu.
+    </p>
+    </div>
+
+    <div class="talk">
+      <div class="talk-date">Wed. May 31, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">Proper time from correlators in QFT and holography</div>
+      <div class="talk-speaker"><a href="https://inspirehep.net/authors/1793520">Allic Sivaramakrishnan, Caltech</a></div>
+      <p id="abstract2" class="talk-abstract">
+        The proper time experienced by a classical probe particle has entered into the study of black hole infall, the boundary encoding of bulk observers in AdS/CFT, and interferometry. In principle, quantum effects can correct classical proper time even for free propagation, which naively renders the geodesic treatment inapplicable. We propose a prescription for extracting proper time from QFT correlators. The quantum corrections arising in this proposal inherit certain properties of geodesics, but violate others. We also discuss a candidate CFT dual to this proposal in AdS. Talk is based on work in progress.
+    </p>
+  </div>
+
+    
+    <div class="talk">
+      <div class="talk-date">Wed. May 24, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">The Magnitude of a Metric Space</div>
+      <div class="talk-speaker"><a href="https://case.edu/artsci/math/mwmeckes/">Mark Meckes, Case Western Reserve University</a></div>
+      <p id="abstract2" class="talk-abstract">
+      Magnitude is a numerical isometric invariant of metric spaces defined recently by Tom Leinster, based on considerations from category theory.  Despite the subject's youth, it has found connections with other invariants from a large and growing number of fields, including theoretical ecology, graph theory, topological data analysis, potential theory, and integral geometry.  I will discuss the basic definitions and motivation and give a broad survey of these connections, ending with some applications in high-dimensional convexity.
+
+    </p>
+    </div>
+
+    
+
+    <div class="talk">
+      <div class="talk-date">Wed. May 3, 2023 &#8212; 2pm</div> 
+      <div class="talk-title">Critical JT Gravity</div>
+      <div class="talk-speaker"><a href="https://inspirehep.net/authors/1817607">Alicia Castro, Radboud University Nijmegen</a></div>
+      <p id="abstract2" class="talk-abstract">
+       In this talk, I will present JT-like gravity, a model of 
+two-dimensional quantum gravity on constant negatively curved 
+spacetimes,  as a model of random hyperbolic surfaces. By studying the 
+generating function of volumes of random hyperbolic surfaces with 
+defects, i.e. weighted geodesic boundaries, we explore critical regimes 
+where the surfaces develop macroscopic holes. We analyse the impact of 
+this critical behavior on the density of states of the theory at the 
+boundary, and we present a family of models that interpolate between 
+systems with \(\sqrt{E}\) and \(E^{3/2}\), which are commonly found in 
+models of JT Gravity coupled to dynamical end-of-the-world and FZZT 
+branes.
+    </p>
+    </div>
+    
+    
+    <div class="talk">
+      <div class="talk-date">Wed. April 19, 2023 &#8212; 2pm <a href="https://www.caltech.edu/map/campus/norman-bridge-laboratory-of-physics-east">@  114 E. Bridge</a></div> 
+      <div class="talk-title">Typicality for Stratified Measures</div>
+      <div class="talk-speaker"><a href="https://webusers.imj-prg.fr/~juan-pablo.vigneaux/">Juan Pablo Vigneaux, Caltech</a></div>
+      <p id="abstract2" class="talk-abstract">
+      An m-rectifiable measure is, roughly speaking, supported by an m-dimensional manifold, and a stratified measure is a convex combination of rectiffiable measures, possibly in different dimensions. Stratified measures generalize discrete-continuous mixtures and have, in general, a nontrivial singular continuous part. We shall study a set of typical realizations of n independent trials of an stratified measure. This set is also stratified and the dimensions of the strata concentrate around the expected value (that either coincides or is conjectured to coincide with Renyi's information dimension of the measure). The entropy of the stratified measure quantifies the exponential rate of growth of the typical set; it also verifies a chain rule whose conditional term bounds the rate of growth of typical realizations in each typical stratum. 
+    </p>
+    </div>
+
+   <div class="talk">
+      <div class="talk-date">Wed. April 12, 2023 &#8212; 2pm</div>
+      <div class="talk-title">On The Origins of the Boltzmann Distribution, or Support Preserving Endomorphisms of Convolution Semigroups, 
+<i>joint with Fedor Sandomirskiy</i></div>
+      <div class="talk-speaker"><a href="http://tamuz.caltech.edu/">Omer Tamuz, Caltech</a></div>
+      <p id="abstract1" class="talk-abstract">
+      The Boltzmann distribution is used in statistical mechanics to describe the distribution of states in systems with a given temperature. We give a novel characterization of this distribution as the unique one satisfying independence for uncoupled systems. The theorem boils down to a statement about symmetries of the convolution semigroup of finitely supported probability measures on the integers.
+    </p>
+    </div>
+
+    
+  </body>
+</html>

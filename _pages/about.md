@@ -23,7 +23,7 @@ Since July 2025, I am a Research Associate in the Department of Linguistics at N
 
 I'm also  working on interpretability of transformer-based LLMs, with a particular focus on the geometry of latent spaces and on compositionality. For further details, see the [research section]({{site.baseurl}}/research/). 
 
-From October 2021 to December 2024, I served as an Olga Taussky and John Todd Instructor in Mathematics at Caltech, mentored by <a href="https://www.its.caltech.edu/~matilde/">Matilde Marcolli</a>. We co-organized the <a href="https://www.its.caltech.edu/~vigneaux/igps/">Information, Geometry, and Physics Seminar</a>.
+From October 2021 to December 2024, I served as an Olga Taussky and John Todd Instructor in Mathematics at Caltech, mentored by <a href="https://www.its.caltech.edu/~matilde/">Matilde Marcolli</a>. We co-organized the [Information, Geometry, and Physics Seminar]({{site.baseurl}}/assets/IGPS/index.html).
 
 Previously, I was a postdoctoral researcher at the Max Planck Institute for Mathematics in the Sciences. In 2019, I obtained my Ph.D. in Mathematics at the University of Paris under the supervision of Daniel Bennequin.
 
