@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ma104a Probability
+title: Ma140a Probability
 description: An introduction to measure-theoretic probability
 img: assets/img/dice.jpg
 importance: 1

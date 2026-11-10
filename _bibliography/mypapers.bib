@@ -80,7 +80,7 @@ pages="338--346",
 
 abbr={Proceedings},
 abstract="We summarize some results of geometric measure theory concerning rectifiable sets and measures. Combined with the entropic chain rule for disintegrations (Vigneaux, 2021), they account for some properties of the entropy of rectifiable measures with respect to the Hausdorff measure first studied by (Koliander et al., 2016). Then we present some recent work on stratified measures, which are convex combinations of rectifiable measures. These generalize discrete-continuous mixtures and may have a singular continuous part. Their entropy obeys a chain rule, whose ``conditional term'' is an average of the entropies of the rectifiable measures involved. We state an asymptotic equipartition property (AEP) for stratified measures that shows concentration on strata of a few ``typical dimensions'' and that links the conditional term of the chain rule to the volume growth of typical sequences in each stratum.",
-arxiv={22306.00305},
+arxiv={2306.00305},
 website={https://link.springer.com/chapter/10.1007/978-3-031-38271-0_33#citeas},
 }
 
@@ -126,7 +126,7 @@ pages="278-287",
   pages={5674--5687},
   year={2019},
   publisher={IEEE}, 
-  selected={true},
+  selected={false},
 
    abbr={Journal},
    abstract={Whereas Shannon entropy is related to the growth rate of multinomial coefficients, we show that the quadratic entropy (Tsallis 2-entropy) is connected to their $q$-deformation; when $q$ is a prime power, these $q$-multinomial coefficients count flags of finite vector spaces with prescribed length and dimensions. In particular, the $q$-binomial coefficients count vector subspaces of given dimension. We obtain in this way a combinatorial explanation for the nonadditivity of the quadratic entropy, which arises from a recursive counting of flags. We show that statistical systems whose configurations are described by flags provide a frequentist justification for the maximum entropy principle with Tsallis statistics. We introduce then a discrete-time stochastic process associated to the $q$-binomial probability distribution, that generates at time $n$ a vector subspace of $\mathbb F_q^n$ (here $\mathbb F_q$ is the finite field of order $q$). The concentration of measure on certain "typical subspaces" allows us to extend the asymptotic equipartition property to this setting. The size of the typical set is quantified by the quadratic entropy. We discuss the applications to Shannon theory, particularly to source coding, when messages correspond to vector spaces.},
@@ -261,9 +261,11 @@ We introduce a set of strongly typical realizations of $\rho^{\otimes n}$ that o
 @article{vigneaux2025probing,
   title={Probing neural audio codecs for distinctions among English nuclear tunes}, 
       author={Juan Pablo Vigneaux and Jennifer Cole},
-booktitle={Proc. Speech Prosody 2026},
+journal={Proc. Speech Prosody 2026},
 year="2026",
-pages="23-27",
+month=may,
+pages="23--27",
+selected={false},
 
     abbr={Proceedings},
     abstract={State-of-the-art spoken dialogue models (Défossez et al. 2024; Schalkwyk et al. 2025) use neural audio codecs to ``tokenize'' audio signals into a lower-frequency stream of vectorial latent representations, each quantized using a hierarchy of vector codebooks. A transformer layer allows these representations to reflect some time- and context-dependent patterns. We train probes on labeled audio data from Cole et al. (2023) to test whether the pitch trajectories that characterize English phrase-final (nuclear) intonational tunes are among these patterns. Results: Linear probes trained on the unquantized latents or some of the associated codewords yield above-chance accuracy in distinguishing eight phonologically specified nuclear tunes with monotonal pitch accents (top average test accuracy (TATA): 0.31) and the five clusters of these tunes that are robust in human speech production and perception (TATA: 0.45). Greater accuracy (TATAs: 0.74-0.89) is attained for binary distinctions between classes of rising vs. falling tunes, respectively used for questions and assertions. Information about tunes is spread among all codebooks, which calls into question a distinction between ‘semantic’ and ‘acoustic’ codebooks found in the literature. Accuracies improve with nonlinear probes, but discrimination among the five clusters remains far from human performance, suggesting a fundamental limitation of current codecs. },
@@ -271,3 +273,29 @@ pages="23-27",
    arxiv={2603.14035}
 }
 
+@article{vigneaux2026representationsyntaxllmslens,
+      title={Representation of syntax in LLMs through the lens of linear distance and similarity-aware entropy}, 
+      author={Juan Pablo Vigneaux and Mary Kennedy and Khalil Iskarous and Robert Frank and Matilde Marcolli},
+      journal={arXiv preprint arXiv:2608.27813},
+      year={2026},
+      month=aug,
+      selected={true},
+
+       abbr={Preprint},
+abstract={Structural probes were introduced by Hewitt and Manning to reconstruct syntactic trees from a neural language model's latent representations. They are evaluated by calculating the proportion of syntactic tree edges correctly reconstructed over an annotated corpus (as measured by undirected unlabeled attachment score). Here, we disaggregate this measure, considering undirected attachment score by label (UASL), which assesses the reconstruction accuracy of each syntactic relation separately, establishing important differences among relations that overlap linguistic distinctions. Moreover, we identify two factors that predict most of UASL's variability across relations: (i) the mean and dispersion of the linear distance (on a log scale) between the related words, and (ii) the diversity (similarity-aware entropy) of the syntactic relation's head. These results, which hold across a range of model sizes and architectures, shed light on the degree of abstraction of the representation of syntax in language models and the dependence of such representation on geometric properties of the embedding space. },
+   arxiv={2608.27813}
+}
+
+@article{vigneaux2026steering,
+  title={Steering intonational tunes in text-to-speech synthesis},
+  author={Juan Pablo Vigneaux and Jennifer Cole},
+  journal={arXiv preprint arXiv:2610.27403; under review at ICLR 2027},
+  year={2026},
+  month=oct,
+  selected={true},
+
+  abbr={Preprint},
+  abstract={Text-to-speech systems built on residual vector quantization often generate audio in two stages: a transformer backbone emits the first level of each frame's token stack, and a smaller depth model generates the rest autoregressively. We ask which components of such a model are responsible for prosodic intonation, more precisely for generating the English nuclear tune (for instance, the falling pitch melody that distinguishes an assertion from a question's rising melody), and whether interventions on those components can be used to control intonation. Prompt-based control mostly fails; only a final question mark is a reliable lever. Interchange interventions in CSM and S2 locate the tune: the backbone's hidden state carries it to the waveform through the depth model, and the first level of the stack carries little or none of it. Steering the backbone state with a difference-of-means vector computed on new material generated with a final period or question mark moves the tune, but the push toward an assertion degrades the voice. Steering vectors computed instead from the backbone states associated with human imitations of theoretically-specified tunes, whose text carries no punctuation, and applied inside the generation loop, move most recordings to the other condition in both systems (even when fitted without the speaker being steered), at a small cost in predicted naturalness. These imitation-derived vectors are aligned with the one obtained from the two punctuated conditions far beyond a shuffled-label null, so the backbone state of a punctuated prompt already represents intonation. The steered recordings broadly become falling or rising, according to the intent, but the edge tone moves more coherently than the pitch accent, and the target tune cannot be selected precisely beyond this broad tendency.},
+  arxiv={2610.27403},
+  code={https://github.com/jpvigneaux/steering-intonation-tts}
+}

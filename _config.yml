@@ -8,12 +8,12 @@ middle_name: ""
 last_name: Vigneaux
 email: jpvigneaux@northwestern.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Juan Pablo Vigneaux's personal website. Mathematics and related topics. 
+  Juan Pablo Vigneaux, mathematician. Interpretability of language and speech models, geometry of neural representations, and information theory.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: information, entropy, topology, measure-theory, category-theory, magnitude, optimal-transport,  # add your own keywords or leave empty
+keywords: interpretability, language models, speech models, intonation, prosody, probing, steering, information theory, entropy, magnitude, diversity, curvature, category theory, topology,  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -63,9 +63,9 @@ max_width: 800px   #Default is 800px
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+og_image: https://jpvigneaux.github.io/assets/img/prof_pic.jpg # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -190,7 +190,7 @@ collections:
     permalink: /Research/:path/
 
 announcements:
-  enabled: false
+  enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -295,6 +295,8 @@ scholar:
   source: /_bibliography/
   bibliography: references.bib
   mybibliography: mypapers.bib
+  sort_by: year,month
+  order: descending,descending
   # bibliography_template: 
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
